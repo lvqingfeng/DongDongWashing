@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/settings_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/orange"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/settings_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="更多设置"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ToolBalTextSize" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/settings_tv1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_tool_bar"
+        android:layout_marginTop="20dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/settings_account_and_security_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/settings_tv1"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="账号与安全"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/settings_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/settings_tv2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_account_and_security_rl"
+        android:background="@color/line_color"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/settings_tv3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_tv2"
+        android:layout_marginTop="19dp"
+        android:background="@color/line_color"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/settings_real_time_traffic_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/settings_tv3"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="实时路况"
+            android:textColor="@color/black" />
+
+        <RadioGroup
+            android:id="@+id/real_time_traffic_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/real_time_traffic_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_values"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="开启"
+                android:textSize="10sp" />
+
+            <RadioButton
+                android:id="@+id/real_time_traffic_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_values"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="关闭"
+                android:textSize="10sp" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/settings_tv4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_real_time_traffic_rl"
+        android:background="@color/line_color"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/settings_sound_effect_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/settings_tv4"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="音效提示"
+            android:textColor="@color/black" />
+
+        <RadioGroup
+            android:id="@+id/sound_effect_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/sound_effect_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_values"
+                android:button="@null"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="开启"
+                android:textSize="10sp" />
+
+            <RadioButton
+                android:id="@+id/sound_effect_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_values"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="关闭"
+                android:textSize="10sp" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/settings_tv5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_sound_effect_rl"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:id="@+id/settings_tv6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_tv5"
+        android:layout_marginTop="19dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/setting_service_model_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/settings_tv6"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="服务车型"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/settings_tv12"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/setting_service_model_rl"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/setting_service_agreement_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/settings_tv12"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="服务协议"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/settings_tv10"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/setting_service_agreement_rl"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:id="@+id/settings_tv11"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_tv10"
+        android:layout_marginTop="19dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/settings_check_update_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/settings_tv11"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="检查更新"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/settings_check_update_iv"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/settings_check_update_iv_1"
+            android:background="@mipmap/oval_3"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/settings_check_update_iv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/settings_tv13"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_check_update_rl"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/settings_about_us_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/settings_tv13"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="关于我们"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/settings_iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/settings_tv8"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_about_us_rl"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/settings_version_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/settings_tv8"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="版本 v1.0.0"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/settings_iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/settings_tv9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/settings_version_rl"
+        android:background="@color/line_color" />
+
+    <Button
+        android:id="@+id/sign_out_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/orange"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

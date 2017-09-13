@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/evaluation_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/orange"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/evaluation_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="评价"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ToolBalTextSize" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/evaluation_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/evaluation_btn"
+        android:layout_below="@+id/evaluation_tool_bar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/evaluation_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/order_iv2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="您的订单已完成，请对我们的工作人员作出评价"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="车辆洗前/洗后照片"
+                android:textColor="@color/black" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/evaluation_before_civ"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:paddingTop="3dp"
+                    android:text="洗车速度"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/speed_1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="true"
+                        android:clickable="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/speed_2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/speed_3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/speed_4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/speed_5"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:paddingTop="3dp"
+                    android:text="洗车服务"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/service_1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="true"
+                        android:clickable="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/service_2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/service_3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/service_4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/service_5"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:paddingTop="3dp"
+                    android:text="干净质量"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/quality_1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="true"
+                        android:clickable="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/quality_2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/quality_3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/quality_4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                    <CheckBox
+                        android:id="@+id/quality_5"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/evaluation_check_select"
+                        android:button="@null"
+                        android:checked="false"
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/evaluation_et"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button_check_shape"
+                android:gravity="left"
+                android:hint="您的意见尤为重要，点评一下吧~"
+                android:maxLength="150"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/evaluation_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/orange"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

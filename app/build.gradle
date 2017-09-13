@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    signingConfigs {
+        dongdong_washing {
+            keyAlias 'car.key'
+            keyPassword 'dongcar8888'
+            storeFile file('C:/Users/沈/.android/dongongcar.keystore.jks')
+            storePassword 'dongcar8888'
+        }
+    }
+
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "dongdongwashing.com"
+        minSdkVersion 17
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.dongdong_washing
+        }
+        debug {
+            signingConfig signingConfigs.dongdong_washing
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                //这里修改apk文件名
+                def fileName = outputFile.name.replace("app", "${defaultConfig.applicationId}_${defaultConfig.versionName}_${releaseTime()}")
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile files('libs/gson-2.3.1.jar')
+    compile files('libs/AMap3DMap_5.2.1_AMapSearch_5.2.1_AMapLocation_3.4.1_20170630.jar')
+    compile files('libs/tbs_sdk_thirdapp_v2.3.0.1048_36801.jar')
+    compile files('libs/umeng_shareboard_widget.jar')
+    compile files('libs/alipaySdk-20160825.jar')
+    compile project(':PushSDK')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0'
+    compile 'me.xiaopan:sketch:2.3.0'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.bigkoo:pickerview:2.0.8'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.chanven.lib:cptr:1.1.0'
+    compile 'com.meiyou.framework:jet:1.0.0'
+    compile 'com.huxq17.xrefreshview:xrefreshview:3.6.9'
+    testCompile 'junit:junit:4.12'
+}

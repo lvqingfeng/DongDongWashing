@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/exchange_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/conversion" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/exchange_iv">
+
+            <TextView
+                android:id="@+id/exchange_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="兑换商品"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/exchange_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:text="动动洗车余额"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/exchange_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_tv1"
+                android:layout_below="@+id/exchange_tv1"
+                android:layout_marginTop="5dp"
+                android:text="兑换方式" />
+
+            <TextView
+                android:id="@+id/exchange_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_tv2"
+                android:layout_below="@+id/exchange_tv2"
+                android:layout_marginTop="5dp"
+                android:text="积分兑换" />
+
+            <TextView
+                android:id="@+id/exchange_tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_tv3"
+                android:layout_below="@+id/exchange_tv3"
+                android:layout_marginTop="5dp"
+                android:text="兑换金额" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/exchange_money"
+                android:layout_below="@id/exchange_type"
+                android:layout_marginRight="3dp"
+                android:layout_toLeftOf="@+id/exchange_money"
+                android:text="¥"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/exchange_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_type"
+                android:layout_below="@+id/exchange_type"
+                android:layout_marginTop="5dp"
+                android:text="10.00"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/exchange_tv5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_tv4"
+                android:layout_below="@+id/exchange_tv4"
+                android:layout_marginTop="5dp"
+                android:text="使用积分" />
+
+            <TextView
+                android:id="@+id/exchange_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_money"
+                android:layout_below="@+id/exchange_money"
+                android:layout_marginTop="5dp"
+                android:text="1500"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/exchange_tv6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_tv5"
+                android:layout_below="@+id/exchange_tv5"
+                android:layout_marginTop="5dp"
+                android:text="订单时间" />
+
+            <TextView
+                android:id="@+id/exchange_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_number"
+                android:layout_below="@+id/exchange_number"
+                android:layout_marginTop="5dp"
+                android:text="2017-04-13 17:33" />
+
+            <TextView
+                android:id="@+id/exchange_tv7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_tv6"
+                android:layout_below="@+id/exchange_tv6"
+                android:layout_marginTop="5dp"
+                android:text="订单编号" />
+
+            <TextView
+                android:id="@+id/exchange_numbering"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/exchange_time"
+                android:layout_below="@+id/exchange_time"
+                android:layout_marginTop="5dp"
+                android:text="11111111100000" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/line_color" />
+
+
+</LinearLayout>

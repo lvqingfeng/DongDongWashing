@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/feedback_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/orange"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/feedback_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="意见反馈"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ToolBalTextSize" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/feed_back_et"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@+id/feedback_tool_bar"
+        android:layout_margin="20dp"
+        android:background="@drawable/edit_text_background_shape"
+        android:gravity="left"
+        android:hint="留下您的宝贵意见，让我们更加完美。&#x000A;(150字内)"
+        android:maxLength="150"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/feed_back_phone_or_email"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/feed_back_et"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_background_shape"
+        android:gravity="left|center_vertical"
+        android:hint="手机号/邮箱（非必填）"
+        android:paddingLeft="15dp"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/feed_back_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/orange"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

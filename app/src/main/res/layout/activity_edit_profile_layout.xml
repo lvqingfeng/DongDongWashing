@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Submit_Order_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/orange"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:id="@+id/edit_profile_rl1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/set_head_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:text="编辑资料"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ToolBalTextSize" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/edit_profile_rl2"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@+id/Submit_Order_toolbar">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/set_head_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/head" />
+
+        <TextView
+            android:id="@+id/setting_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/set_head_photo"
+            android:padding="20dp"
+            android:text="修改头像"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/edit_profile_tv9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/edit_profile_rl2"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/edit_profile_rl3"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/edit_profile_tv9">
+
+        <TextView
+            android:id="@+id/edit_profile_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/iv1"
+            android:text="昵称"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/nick_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/edit_profile_tv1"
+            android:background="@null"
+            android:hint="编辑昵称"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/edit_profile_tv10"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/edit_profile_rl3"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/edit_profile_rl4"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/edit_profile_tv10">
+
+        <TextView
+            android:id="@+id/edit_profile_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/iv1"
+            android:text="姓名"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/name_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/edit_profile_tv2"
+            android:background="@null"
+            android:hint="编辑姓名"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/x" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/edit_profile_tv11"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/edit_profile_rl4"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/edit_profile_rl5"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/edit_profile_tv11"
+        android:gravity="left|center">
+
+        <TextView
+            android:id="@+id/edit_profile_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/iv1"
+            android:text="性别"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/edit_profile_tv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/edit_profile_tv3"
+            android:text="男"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/gender_man_iv"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/edit_profile_tv7"
+            android:background="@mipmap/check"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/edit_profile_tv8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/gender_man_iv"
+            android:text="女"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/gender_woman_iv"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/edit_profile_tv8"
+            android:background="@mipmap/uncheck"
+            android:padding="10dp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/edit_profile_tv12"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/edit_profile_rl5"
+        android:background="@color/line_color" />
+
+
+    <RelativeLayout
+        android:id="@+id/edit_profile_rl6"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/edit_profile_tv12">
+
+        <TextView
+            android:id="@+id/edit_profile_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/iv1"
+            android:text="车牌"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/number_plate_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/edit_profile_tv4"
+            android:background="@null"
+            android:hint="请输入车牌号"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/x" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/edit_profile_tv13"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/edit_profile_rl6"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/edit_profile_rl7"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/edit_profile_tv13">
+
+        <TextView
+            android:id="@+id/edit_profile_tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/iv1"
+            android:text="车型"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/car_type_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/edit_profile_tv5"
+            android:background="@null"
+            android:hint="请输入车辆品牌"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/x" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/edit_profile_tv14"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/edit_profile_rl7"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/edit_profile_rl8"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/edit_profile_tv14">
+
+        <TextView
+            android:id="@+id/edit_profile_tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/iv1"
+            android:text="颜色"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/car_color_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/edit_profile_tv6"
+            android:background="@null"
+            android:hint="请输入车辆颜色"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/x" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/edit_profile_tv15"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/edit_profile_rl8"
+        android:background="@color/line_color" />
+
+    <Button
+        android:id="@+id/edit_profile_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/orange"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

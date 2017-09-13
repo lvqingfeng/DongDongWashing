@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="90dp"
+    android:layout_height="60dp"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <me.xiaopan.sketch.SketchImageView
+            android:id="@+id/sketch_image_view"
+            android:layout_width="100dp"
+            android:layout_height="67dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/loading" />
+
+        <ImageView
+            android:id="@+id/grid_delete_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            android:src="@mipmap/minus2"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</LinearLayout>
