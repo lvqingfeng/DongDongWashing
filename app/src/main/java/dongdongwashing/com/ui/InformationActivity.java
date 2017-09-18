@@ -15,7 +15,7 @@ import dongdongwashing.com.com.BaseActivity;
 public class InformationActivity extends BaseActivity {
 
     private ImageView informationBack;
-
+    
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

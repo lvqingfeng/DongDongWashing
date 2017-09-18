@@ -71,7 +71,7 @@ public class OrderInfoUtil2_0 {
 
         keyValues.put("app_id", app_id);
 
-        keyValues.put("biz_content", "{\"timeout_express\":\"30m\",\"product_code\":\"QUICK_MSECURITY_PAY\",\"total_amount\":\"" + orderTotalStr + "\",\"subject\":\"动动美车-为你上门清洗您的爱车\",\"body\":\"预约上门洗车\",\"out_trade_no\":\"" + orderNumber + "\"}");
+        keyValues.put("biz_content", "{\"timeout_express\":\"30m\",\"product_code\":\"QUICK_MSECURITY_PAY\",\"total_amount\":\"" + orderTotalStr + "\",\"subject\":\"动动美车-为您上门清洗您的爱车\",\"body\":\"预约上门洗车\",\"out_trade_no\":\"" + orderNumber + "\"}");
 
         keyValues.put("charset", "utf-8");
 

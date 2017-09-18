@@ -443,7 +443,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     RefundRequest refundRequest = (RefundRequest) msg.obj;
                     String refundString = refundRequest.getIsSucess();
                     if (refundString.equals("true")) {
-                        dialog = new DialogByOneButton(MainActivity.this, "提示", "正在为您办理退款，请耐心等候", "确实");
+                        dialog = new DialogByOneButton(MainActivity.this, "提示", "正在为您办理退款，请耐心等候", "确定");
                         dialog.show();
                         dialog.setClicklistener(new DialogByOneButton.ClickListenerInterface() {
                             @Override

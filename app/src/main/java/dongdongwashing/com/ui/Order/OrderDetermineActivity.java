@@ -5,14 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,8 +65,6 @@ import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
-import static dongdongwashing.com.R.drawable.about_us;
 
 /**
  * Created by 沈 on 2017/4/6.
@@ -156,7 +152,7 @@ public class OrderDetermineActivity extends BaseActivity implements View.OnClick
                     AliPayRequest aliPayRequest = (AliPayRequest) msg.obj;
                     AliPayResult aliPayResult = aliPayRequest.getData();
                     String aliPayState = aliPayRequest.getIsSucess();
-                    if (aliPayState.equals("true")) {
+                    if (TextUtils.equals("true", aliPayState)) {
                         APPID = aliPayResult.getAppID();
                         RSA2_PRIVATE = aliPayResult.getKey();
                     }
@@ -165,7 +161,7 @@ public class OrderDetermineActivity extends BaseActivity implements View.OnClick
                 case GlobalConsts.CREATE_ORDER_HANDLER: // 生成订单
                     CreateOrderRequest createOrderRequest = (CreateOrderRequest) msg.obj;
                     String createOrderString = createOrderRequest.getMsg();
-                    if (createOrderString.equals("下单成功")) {
+                    if (TextUtils.equals("下单成功", createOrderString)) {
                         determineOrderBack.setVisibility(View.GONE);
                         determineOrderBack2.setVisibility(View.VISIBLE);
                         determineOrderCancel.setVisibility(View.VISIBLE);
@@ -190,7 +186,7 @@ public class OrderDetermineActivity extends BaseActivity implements View.OnClick
                     final String payStatus = payResult.getResultStatus();
                     if (payPw != null && payPw.isShowing()) {
                         payPw.dismiss();
-                        if ("9000".equals(payStatus)) {
+                        if (TextUtils.equals("9000", payStatus)) {
                             saveAliPay(); // 保存支付成功后的信息
                         } else {
                             showPayFailurePW(); // 支付失败的弹窗
@@ -202,7 +198,7 @@ public class OrderDetermineActivity extends BaseActivity implements View.OnClick
                     SaveAliPayRequest saveAliPayRequest = (SaveAliPayRequest) msg.obj;
                     HideDialogByProgress();
                     String saveAliPayState = saveAliPayRequest.getIsSucess();
-                    if (saveAliPayState.equals("true")) {
+                    if (TextUtils.equals("true", saveAliPayState)) {
                         showPaySuccessPW(); // 支付成功的弹窗
                     } else {
                         showPaySuccessPW();
@@ -212,7 +208,7 @@ public class OrderDetermineActivity extends BaseActivity implements View.OnClick
                 case GlobalConsts.WE_CHAT_PAY_HANDLER: // 微信支付请求
                     WeChatPayRequest weChatPayRequest = (WeChatPayRequest) msg.obj;
                     String weChatPayMsgStr = weChatPayRequest.getMsg();
-                    if (weChatPayMsgStr.equals("调用支付客端参数")) {
+                    if (TextUtils.equals("调用支付客端参数", weChatPayMsgStr)) {
                         if (dialogByProgress != null && dialogByProgress.isShowing()) {
                             dialogByProgress.dismiss();
                             WeChatPayResult weChatPayResult = weChatPayRequest.getData();
@@ -234,14 +230,14 @@ public class OrderDetermineActivity extends BaseActivity implements View.OnClick
                 case GlobalConsts.CREATE_ORDER_STATE_HANDLER: // 修改订单状态
                     OrderStateRequest changeOrderStateRequest = (OrderStateRequest) msg.obj;
                     String changeOrderStateStr = changeOrderStateRequest.getMsg();
-                    if (changeOrderStateStr.equals("订单状态成功")) {
+                    if (TextUtils.equals("订单状态成功", changeOrderStateStr)) {
                         String changeOrderStateIng = changeOrderStateRequest.getData().getOrderSate();
-                        if (changeOrderStateIng.equals("2")) { // 支付成功，待接单
+                        if (TextUtils.equals("2", changeOrderStateIng)) { // 支付成功，待接单
                             Intent intent = new Intent();
                             intent.putExtra("ORDER_NUMBER", orderNumber);
                             setResult(RESULT_OK, intent);
                             OrderDetermineActivity.this.finish();
-                        } else if (changeOrderStateIng.equals("6")) { // 订单取消
+                        } else if (TextUtils.equals("6", changeOrderStateIng)) { // 订单取消
                             OrderDetermineActivity.this.finish();
                         }
                     }
@@ -478,7 +474,7 @@ public class OrderDetermineActivity extends BaseActivity implements View.OnClick
                     photoListStr = orderGson.toJson(list);
                 }
 
-                List<OrderItem> orderItemListData = new ArrayList<>(); // // TODO 清洗项目数据转换  Log.d("test", "订单的数据---" + orderItemList.toString()); Log.d("test", "价钱的数据---" + orderItemIdList.toString());
+                List<OrderItem> orderItemListData = new ArrayList<>(); // TODO 清洗项目数据转换  Log.d("test", "订单的数据---" + orderItemList.toString()); Log.d("test", "价钱的数据---" + orderItemIdList.toString());
                 if (!orderItemList.isEmpty() && !orderItemIdList.isEmpty()) {
                     for (int i = 0; i < orderItemList.size(); i++) {
                         orderItemNameOrPrice = new OrderItem();
@@ -552,8 +548,7 @@ public class OrderDetermineActivity extends BaseActivity implements View.OnClick
                     Toast.makeText(OrderDetermineActivity.this, "请选择支付方式", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
-                    Log.d("test", "支付方式" + payWay.toString());
-                    if (payWay.equals("3")) { // 支付宝支付
+                    if (TextUtils.equals("3", payWay)) { // 支付宝支付
                         boolean rsa2 = (RSA2_PRIVATE.length() > 0);
                         Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(APPID, rsa2, "0.01", orderNumber, createOrderTimeStr);
                         String orderParam = OrderInfoUtil2_0.buildOrderParam(params);
@@ -570,7 +565,7 @@ public class OrderDetermineActivity extends BaseActivity implements View.OnClick
                                 handler.sendMessage(aliPayMsg);
                             }
                         }).start();
-                    } else if (payWay.equals("2")) { // 微信支付
+                    } else if (TextUtils.equals("2", payWay)) { // 微信支付
                         if (DataConversionByShen.isWeixinAvilible(OrderDetermineActivity.this) == false) {
                             Toast.makeText(OrderDetermineActivity.this, "请先安装微信", Toast.LENGTH_SHORT).show();
                             return;

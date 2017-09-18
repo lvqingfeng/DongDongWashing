@@ -2,9 +2,5 @@
     {
         "merged": "C:\\Shen\\Android\\androidstudioworkspace\\DongDongWashing\\PushSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\upush_notification.xml",
         "source": "C:\\Shen\\Android\\androidstudioworkspace\\DongDongWashing\\PushSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\upush_notification.xml"
-    },
-    {
-        "merged": "C:\\Shen\\Android\\androidstudioworkspace\\com.cn.dongdong.washing\\DongDongWashing\\PushSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\upush_notification.xml",
-        "source": "C:\\Shen\\Android\\androidstudioworkspace\\com.cn.dongdong.washing\\DongDongWashing\\PushSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\upush_notification.xml"
     }
 ]
